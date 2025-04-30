@@ -1,4 +1,4 @@
-import { Box, Grid, Pagination, Stack, TextField } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import ProductCard from "@/components/product-cart/product-cart";
 import styles from "./products.module.css";
 import { listProductService } from "@/services/product.service";
@@ -23,7 +23,6 @@ export interface Products {
 export default async function ProductList({ search, page, limit = 8 }) {
   const products: { products: Products[]; total: number } =
     await listProductService({ search, page, limit });
-  console.log("✌️products --->", products);
 
   return (
     <>

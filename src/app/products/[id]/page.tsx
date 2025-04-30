@@ -1,11 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import styles from "./product.module.css";
 import Image from "next/image";
-import { MoonLoader } from "react-spinners";
 import { getProductService } from "@/services/product.service";
 import { Products } from "../page";
 const ProductPage = async ({ params }: { params: { id: string } }) => {
-  const { id } = await params;
+  const { id } =  params;
 
   const product: Products = await getProductService(Number(id));
   return (

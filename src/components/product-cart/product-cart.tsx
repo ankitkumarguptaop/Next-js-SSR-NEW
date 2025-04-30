@@ -4,7 +4,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { redirect } from "next/navigation";
 import { Grid } from "@mui/material";
 import Link from "next/link";
 
@@ -27,11 +26,9 @@ export default function ProductCard(product: Products) {
   return (
     <>
       <Grid size={{ xs: 12, md: 6, xl: 3 }} key={product.id}>
-        <Card
-          sx={{ maxWidth: 345, cursor: "pointer" }}
-        >
+        <Card sx={{ maxWidth: 345, cursor: "pointer" }}>
           <Link
-          passHref
+            passHref
             href={`products/${product.id}`}
             style={{ textDecoration: "none" }}
           >
@@ -52,7 +49,7 @@ export default function ProductCard(product: Products) {
           </CardContent>
           <CardActions>
             <Link
-            passHref
+              passHref
               href={`products/${product.id}`}
               style={{ textDecoration: "none" }}
             >

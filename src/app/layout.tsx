@@ -1,7 +1,6 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import "./globals.css";
 import { Container } from "@mui/material";
-import ReduxProvider from "@/store/reduc-provider";
 
 export default function RootLayout({
   children,
@@ -12,11 +11,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppRouterCacheProvider>
-          <ReduxProvider>
           <Container maxWidth="xl" sx={{ backgroundColor: "#ebe7dd" }}>
             {children}
           </Container>
-          </ReduxProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

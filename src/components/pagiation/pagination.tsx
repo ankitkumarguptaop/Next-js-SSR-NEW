@@ -11,14 +11,14 @@ const PaginationComponent = ({
   page: number;
   totalPage: number;
 }) => {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
+  const searchParams = useSearchParams(); // give query params
+  const pathname = usePathname(); // give current path name 
+  const { replace } = useRouter(); // give access to navigate with replace url
 
   function handleChange(e, page) {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams); // use to get formatted params
     params.set("page", page);
- replace(`${pathname}?${params.toString()}`);
+ replace(`${pathname}?${params.toString()}`); // replace the params with new params
   }
 
   return (
